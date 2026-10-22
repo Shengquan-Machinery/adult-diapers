@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коммерческое предложение: Линия SQM-CK-300SV</title>
+    <style>
+        :root {
+            --primary-color: #0b3d91;
+            --secondary-color: #f39c12;
+            --text-color: #333;
+            --light-bg: #f4f7f6;
+            --white: #ffffff;
+            --border-color: #ddd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(11, 61, 145, 0.8), rgba(11, 61, 145, 0.9)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: var(--white);
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        /* Баннер представителя */
+        .representative-banner {
+            background-color: #d32f2f; 
+            color: white; 
+            text-align: center; 
+            padding: 20px; 
+            font-size: 1.2rem; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        .representative-banner a {
+            color: #ffca28; 
+            text-decoration: none; 
+            font-size: 1.4rem; 
+            font-weight: bold; 
+            display: inline-block; 
+            margin-top: 10px; 
+            text-transform: uppercase;
+        }
+        .representative-banner a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sections General */
+        section {
+            padding: 60px 5%;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Main Machine Summary */
+        .main-machine {
+            background-color: var(--light-bg);
+        }
+
+        .summary-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .summary-image {
+            flex: 1 1 500px;
+            height: 350px;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+        }
+
+        .summary-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Сохраняет пропорции */
+        }
+
+        .summary-details {
+            flex: 1 1 400px;
+        }
+
+        .summary-details h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .summary-details ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .summary-details ul li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .summary-details ul li span {
+            font-weight: bold;
+            color: var(--primary-color);
+            display: inline-block;
+            width: 180px;
+        }
+
+        /* Equipment Grid */
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            height: 250px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-color);
+            padding: 10px;
+        }
+
+        .card-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            min-height: 50px; /* Выравнивание карточек */
+        }
+
+        .card-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #d35400;
+            margin-bottom: 10px;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        /* Specifications Table */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .specs-table th, .specs-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .specs-table th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .specs-table tr:nth-child(even) {
+            background-color: var(--light-bg);
+        }
+
+        /* Пневматика (доп фото) */
+        .engineering-gallery {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .engineering-gallery img {
+            width: 48%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Terms Section */
+        .terms {
+            background-color: var(--light-bg);
+        }
+
+        .terms-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .term-box {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .term-box h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .term-box p {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            text-align: center;
+            padding: 30px 5%;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                padding: 20px;
+                text-align: center;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .summary-details ul li span {
+                width: 100%;
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .engineering-gallery img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+        <div class="logo">Shengquan Machinery</div>
+        <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
+        <nav>
+            <ul>
+                <li><a href="#main-machine">Основная машина</a></li>
+                <li><a href="#options">Доп. оборудование</a></li>
+                <li><a href="#specs">Характеристики</a></li>
+                <li><a href="#terms">Условия</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Главный экран -->
+    <section class="hero">
+        <h1>Полностью сервоприводная линия по производству подгузников для взрослых</h1>
+        <p>Модель SQM-CK-300SV. Высокая скорость, надежность и полный контроль качества. Ознакомьтесь с коммерческим предложением.</p>
+        <a href="#main-machine" class="btn">Смотреть конфигурацию</a>
+    </section>
+
+    <!-- Баннер эксклюзивного представителя -->
+    <div class="representative-banner">
+        <p style="margin: 0;">
+            <strong>Официальный эксклюзивный представитель в РФ и странах СНГ:</strong><br>
+            <a href="https://royalmachinery.ru" target="_blank">Royal Machinery (royalmachinery.ru)</a>
+        </p>
+    </div>
+
+    <!-- Основное оборудование -->
+    <section id="main-machine" class="main-machine">
+        <h2>Основное оборудование</h2>
+        <div class="summary-card">
+            <div class="summary-image">
+                <!-- Изображение основной машины -->
+                <img src="main-machine.jpg" alt="Полностью сервоприводная машина SQM-CK-300SV">
+            </div>
+            <div class="summary-details">
+                <h3>Полностью сервоприводная машина</h3>
+                <ul>
+                    <li><span>Модель:</span> SQM-CK-300SV</li>
+                    <li><span>Количество:</span> 1 компл.</li>
+                    <li><span>Стоимость (FOB):</span> $1 976 700 USD</li>
+                    <li><span>Срок поставки:</span> 150 рабочих дней после получения депозита и утверждения чертежей</li>
+                </ul>
+                <p><em>* Подробности конфигурации см. в разделе "Технические характеристики".</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Дополнительное оборудование -->
+    <section id="options">
+        <h2>Опциональная комплектация</h2>
+        <div class="equipment-grid">
+            
+            <!-- Аппликаторы (оставил заглушку, так как фото клеевого аппарата в загрузке не было) -->
+            <div class="card">
+                <div class="card-image" style="color: #888; font-weight: bold; background-color: #f9f9f9;">[Фото аппликаторов]</div>
+                <div class="card-content">
+                    <h3>Аппликаторы термоплавкого клея</h3>
+                    <div class="card-price">$102 900 USD</div>
+                    <p class="card-desc"><strong>Бренд:</strong> JDL (Китай) или Wahrheits.<br>Конфигурация подтверждается после утверждения параметров продукции. Поставка вместе с линией.</p>
+                </div>
+            </div>
+
+            <!-- Компрессор -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="compressor.jpg" alt="Воздушный компрессорный агрегат">
+                </div>
+                <div class="card-content">
+                    <h3>Воздушный компрессорный агрегат</h3>
+                    <div class="card-price">$109 250 USD</div>
+                    <p class="card-desc"><strong>Бренд:</strong> HuaDa.<br>Мощность: 37 кВт. Подача: 6,2 м³/ч. Ресивер: 1 м³. Осушитель: 50 л.с.</p>
+                </div>
+            </div>
+
+            <!-- Визуальный контроль -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="visual-detector.jpg" alt="Система визуального контроля">
+                </div>
+                <div class="card-content">
+                    <h3>Система визуального контроля</h3>
+                    <div class="card-price">$124 150 USD</div>
+                    <p class="card-desc">Автоматически выявляет бракованные изделия (черные точки >2 мм, отсутствие деталей), гарантируя 100% первый сорт.</p>
+                </div>
+            </div>
+
+            <!-- Принтер -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="printer.jpg" alt="Струйный принтер">
+                </div>
+                <div class="card-content">
+                    <h3>Струйный принтер (дата производства)</h3>
+                    <div class="card-price">$19 250 USD</div>
+                    <p class="card-desc">Для нанесения даты производства на продукцию. Поставка вместе с линией.</p>
+                </div>
+            </div>
+
+            <!-- Металлодетектор -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="metal-detector.jpg" alt="Металлодетектор">
+                </div>
+                <div class="card-content">
+                    <h3>Металлодетектор</h3>
+                    <div class="card-price">$15 500 USD</div>
+                    <p class="card-desc">Для контроля качества и безопасности продукции. Поставка вместе с линией.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Технические характеристики -->
+    <section id="specs">
+        <h2>Основные параметры</h2>
+        <table class="specs-table">
+            <tbody>
+                <tr>
+                    <th>Параметр</th>
+                    <th>Значение</th>
+                </tr>
+                <tr>
+                    <td>Размеры продукции (обхват талии/бедер)</td>
+                    <td>S: 55-80 см; M: 75-100 см; L: 100-150 см; XL: 130-170 см; XXL: 160-190 см</td>
+                </tr>
+                <tr>
+                    <td>Проектная скорость</td>
+                    <td>350 шт./мин (размер M)</td>
+                </tr>
+                <tr>
+                    <td>Стабильная рабочая скорость</td>
+                    <td>250 шт./мин</td>
+                </tr>
+                <tr>
+                    <td>Отклонение массы изделия</td>
+                    <td>±5 г</td>
+                </tr>
+                <tr>
+                    <td>Выход годной продукции</td>
+                    <td>≥ 95%</td>
+                </tr>
+                <tr>
+                    <td>Установленная мощность</td>
+                    <td>550 кВт (без клеевого аппарата), 650 кВт (с клеевым аппаратом)</td>
+                </tr>
+                <tr>
+                    <td>Габариты основной машины</td>
+                    <td>45 м × 2 м × 4 м</td>
+                </tr>
+                <tr>
+                    <td>Размеры рабочей площадки</td>
+                    <td>65 м × 8 м × 4,5 м</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Фото качества сборки пневматики -->
+        <div class="engineering-gallery">
+            <img src="pipes-blue.jpg" alt="Магистральные воздушные трубы">
+            <img src="pipes-red.jpg" alt="Разводка пневматики внутри машины">
+        </div>
+    </section>
+
+    <!-- Условия -->
+    <section id="terms" class="terms">
+        <h2>Условия поставки и оплаты</h2>
+        <div class="terms-container">
+            <div class="term-box">
+                <h4>Срок поставки</h4>
+                <p>150 рабочих дней после получения Продавцом депозита и утверждения обеими сторонами чертежей образца.</p>
+            </div>
+            <div class="term-box">
+                <h4>Условия оплаты</h4>
+                <p>30% — депозит телеграфным переводом (Т/Т).</p>
+                <p>70% — Т/Т до отгрузки.</p>
+            </div>
+            <div class="term-box">
+                <h4>Гарантия</h4>
+                <p>12 месяцев с даты поставки. В течение этого периода Продавец обязуется ремонтировать машину и предоставлять запчасти (кроме быстроизнашивающихся деталей и повреждений по вине Покупателя).</p>
+            </div>
+            <div class="term-box">
+                <h4>Монтаж и наладка</h4>
+                <p>Продавец отвечает за первую установку и регулировку (срок: 30 дней).</p>
+                <p>При задержке по вине Покупателя или сверхурочной работе — $200/день за специалиста.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <p><strong>Shengquan Machinery Co., Ltd</strong></p>
+        <p style="color: #ffca28; font-size: 1.1rem; margin: 15px 0;">
+            Официальный эксклюзивный представитель по РФ и СНГ: 
+            <a href="https://royalmachinery.ru" target="_blank" style="color: #ffca28; text-decoration: underline;">Royal Machinery</a>
+        </p>
+        <p>Наша компания также может поставлять различные виды сырья для детских подгузников, подгузников для взрослых и гигиенических прокладок.</p>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: #888;">&copy; <span id="year"></span> Все права защищены. Коммерческое предложение.</p>
+    </footer>
+
+    <script>
+        // Плавная прокрутка для якорных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Закрыть мобильное меню после клика
+                document.querySelector('nav ul').classList.remove('active');
+            });
+        });
+
+        // Автоматическая подстановка текущего года в копирайт
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
