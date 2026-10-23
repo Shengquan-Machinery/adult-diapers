@@ -107,24 +107,32 @@
 
         /* Баннер представителя */
         .representative-banner {
-            background-color: #d32f2f; 
-            color: white; 
+            background-color: #ffcc00; 
+            color: #333; 
             text-align: center; 
             padding: 20px; 
             font-size: 1.2rem; 
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            border-bottom: 3px solid #e6b800;
         }
         .representative-banner a {
-            color: #ffca28; 
+            color: #0b3d91; 
             text-decoration: none; 
             font-size: 1.4rem; 
             font-weight: bold; 
             display: inline-block; 
-            margin-top: 10px; 
+            margin-top: 5px; 
             text-transform: uppercase;
         }
         .representative-banner a:hover {
             text-decoration: underline;
+        }
+        .phone-number {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #d32f2f; 
+            margin-top: 10px;
+            display: block;
         }
 
         /* Sections General */
@@ -183,7 +191,7 @@
         .summary-image img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Сохраняет пропорции */
+            object-fit: contain;
         }
 
         .summary-details {
@@ -264,7 +272,7 @@
             font-size: 1.2rem;
             margin-bottom: 10px;
             color: var(--primary-color);
-            min-height: 50px; /* Выравнивание карточек */
+            min-height: 50px;
         }
 
         .card-price {
@@ -320,6 +328,22 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
+        /* Brands Grid */
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .brand-item {
+            background: var(--white);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .brand-item strong { color: var(--primary-color); }
+
         /* Terms Section */
         .terms {
             background-color: var(--light-bg);
@@ -327,7 +351,7 @@
 
         .terms-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
 
@@ -345,9 +369,12 @@
             color: var(--primary-color);
         }
 
-        .term-box p {
+        .term-box p, .term-box li {
             font-size: 0.95rem;
             margin-bottom: 10px;
+        }
+        .term-box ul {
+            padding-left: 20px;
         }
 
         /* Footer */
@@ -420,6 +447,7 @@
                 <li><a href="#main-machine">Основная машина</a></li>
                 <li><a href="#options">Доп. оборудование</a></li>
                 <li><a href="#specs">Характеристики</a></li>
+                <li><a href="#brands">Бренды</a></li>
                 <li><a href="#terms">Условия</a></li>
             </ul>
         </nav>
@@ -436,8 +464,11 @@
     <div class="representative-banner">
         <p style="margin: 0;">
             <strong>Официальный эксклюзивный представитель в РФ и странах СНГ:</strong><br>
-            <a href="https://royalmachinery.ru" target="_blank">Royal Machinery (royalmachinery.ru)</a>
+            <a href="https://royalmachinery.ru" target="_blank">Royal Rich Machinery LTD (royalmachinery.ru)</a>
         </p>
+        <span class="phone-number">
+            Тел: <a href="tel:+79191479545" style="font-size: 1.4rem; color: #d32f2f;">+7 (919) 147-95-45</a>
+        </span>
     </div>
 
     <!-- Основное оборудование -->
@@ -445,16 +476,15 @@
         <h2>Основное оборудование</h2>
         <div class="summary-card">
             <div class="summary-image">
-                <!-- Изображение основной машины -->
-                <img src="main-machine.jpg" alt="Полностью сервоприводная машина SQM-CK-300SV">
+                <img src="main-machine.png" alt="Полностью сервоприводная машина SQM-CK-300SV">
             </div>
             <div class="summary-details">
                 <h3>Полностью сервоприводная машина</h3>
                 <ul>
                     <li><span>Модель:</span> SQM-CK-300SV</li>
                     <li><span>Количество:</span> 1 компл.</li>
-                    <li><span>Стоимость (FOB):</span> $1 976 700 USD</li>
-                    <li><span>Срок поставки:</span> 150 рабочих дней после получения депозита и утверждения чертежей</li>
+                    <li><span>Стоимость (FOB):</span> $976 700 USD</li>
+                    <li><span>Срок поставки:</span> 150 рабочих дней после получения аванса и утверждения чертежей</li>
                 </ul>
                 <p><em>* Подробности конфигурации см. в разделе "Технические характеристики".</em></p>
             </div>
@@ -466,24 +496,50 @@
         <h2>Опциональная комплектация</h2>
         <div class="equipment-grid">
             
-            <!-- Аппликаторы (оставил заглушку, так как фото клеевого аппарата в загрузке не было) -->
+            <!-- Аппликаторы -->
             <div class="card">
-                <div class="card-image" style="color: #888; font-weight: bold; background-color: #f9f9f9;">[Фото аппликаторов]</div>
+                <div class="card-image">
+                    <img src="glue.png" alt="Аппликаторы термоплавкого клея">
+                </div>
                 <div class="card-content">
-                    <h3>Аппликаторы термоплавкого клея</h3>
+                    <h3>Аппликаторы термоплавкого клея (7 шт.)</h3>
                     <div class="card-price">$102 900 USD</div>
                     <p class="card-desc"><strong>Бренд:</strong> JDL (Китай) или Wahrheits.<br>Конфигурация подтверждается после утверждения параметров продукции. Поставка вместе с линией.</p>
+                </div>
+            </div>
+
+            <!-- Укладчик -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="stacker.png" alt="Укладчик">
+                </div>
+                <div class="card-content">
+                    <h3>Укладчик + 2 машины для запайки</h3>
+                    <div class="card-price">$110 250 USD</div>
+                    <p class="card-desc"><strong>Модель:</strong> SQ-PK200.<br>Поставка вместе с производственной линией.</p>
+                </div>
+            </div>
+
+            <!-- Пылеуловитель -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="dust-remover.png" alt="Барабанный пылеуловитель">
+                </div>
+                <div class="card-content">
+                    <h3>Барабанный пылеуловитель</h3>
+                    <div class="card-price">$34 650 USD</div>
+                    <p class="card-desc"><strong>Бренд:</strong> Xiang Hong.<br>Отрицательное давление, эффективное удаление пыли. Поставка вместе с линией.</p>
                 </div>
             </div>
 
             <!-- Компрессор -->
             <div class="card">
                 <div class="card-image">
-                    <img src="compressor.jpg" alt="Воздушный компрессорный агрегат">
+                    <img src="compressor.png" alt="Воздушный компрессорный агрегат">
                 </div>
                 <div class="card-content">
                     <h3>Воздушный компрессорный агрегат</h3>
-                    <div class="card-price">$109 250 USD</div>
+                    <div class="card-price">$9 250 USD</div>
                     <p class="card-desc"><strong>Бренд:</strong> HuaDa.<br>Мощность: 37 кВт. Подача: 6,2 м³/ч. Ресивер: 1 м³. Осушитель: 50 л.с.</p>
                 </div>
             </div>
@@ -491,11 +547,11 @@
             <!-- Визуальный контроль -->
             <div class="card">
                 <div class="card-image">
-                    <img src="visual-detector.jpg" alt="Система визуального контроля">
+                    <img src="visual-detector.png" alt="Система визуального контроля">
                 </div>
                 <div class="card-content">
                     <h3>Система визуального контроля</h3>
-                    <div class="card-price">$124 150 USD</div>
+                    <div class="card-price">$24 150 USD</div>
                     <p class="card-desc">Автоматически выявляет бракованные изделия (черные точки >2 мм, отсутствие деталей), гарантируя 100% первый сорт.</p>
                 </div>
             </div>
@@ -503,11 +559,11 @@
             <!-- Принтер -->
             <div class="card">
                 <div class="card-image">
-                    <img src="printer.jpg" alt="Струйный принтер">
+                    <img src="printer.png" alt="Струйный принтер">
                 </div>
                 <div class="card-content">
                     <h3>Струйный принтер (дата производства)</h3>
-                    <div class="card-price">$19 250 USD</div>
+                    <div class="card-price">$9 250 USD</div>
                     <p class="card-desc">Для нанесения даты производства на продукцию. Поставка вместе с линией.</p>
                 </div>
             </div>
@@ -515,11 +571,11 @@
             <!-- Металлодетектор -->
             <div class="card">
                 <div class="card-image">
-                    <img src="metal-detector.jpg" alt="Металлодетектор">
+                    <img src="metal-detector.png" alt="Металлодетектор">
                 </div>
                 <div class="card-content">
                     <h3>Металлодетектор</h3>
-                    <div class="card-price">$15 500 USD</div>
+                    <div class="card-price">$5 500 USD</div>
                     <p class="card-desc">Для контроля качества и безопасности продукции. Поставка вместе с линией.</p>
                 </div>
             </div>
@@ -557,6 +613,14 @@
                     <td>≥ 95%</td>
                 </tr>
                 <tr>
+                    <td>Коэффициент использования</td>
+                    <td>≥ 85%</td>
+                </tr>
+                <tr>
+                    <td>Электропитание</td>
+                    <td>3 фазы, 380 В, 50 Гц</td>
+                </tr>
+                <tr>
                     <td>Установленная мощность</td>
                     <td>550 кВт (без клеевого аппарата), 650 кВт (с клеевым аппаратом)</td>
                 </tr>
@@ -568,37 +632,79 @@
                     <td>Размеры рабочей площадки</td>
                     <td>65 м × 8 м × 4,5 м</td>
                 </tr>
+                <tr>
+                    <td>Количество контейнеров для погрузки</td>
+                    <td>7 × 40HQ</td>
+                </tr>
             </tbody>
         </table>
 
         <!-- Фото качества сборки пневматики -->
         <div class="engineering-gallery">
-            <img src="pipes-blue.jpg" alt="Магистральные воздушные трубы">
-            <img src="pipes-red.jpg" alt="Разводка пневматики внутри машины">
+            <img src="pipes-1.png" alt="Магистральные воздушные трубы">
+            <img src="pipes-2.png" alt="Разводка пневматики внутри машины">
+        </div>
+    </section>
+
+    <!-- Бренды комплектующих -->
+    <section id="brands" style="background-color: var(--light-bg);">
+        <h2>Бренды основных комплектующих</h2>
+        <div class="brands-grid">
+            <div class="brand-item">ПЛК, Серводвигатели, Экраны: <strong>Mitsubishi (Япония)</strong></div>
+            <div class="brand-item">Корректор положения полотна: <strong>LIKE (Китай) / FIFE (США)</strong></div>
+            <div class="brand-item">Датчики: <strong>Panasonic (Япония)</strong></div>
+            <div class="brand-item">Подшипники: <strong>HRB / NSK / SKF</strong></div>
+            <div class="brand-item">Синхронные ремни: <strong>Gates (США)</strong></div>
+            <div class="brand-item">Плоские ремни: <strong>HABASIT (Швейцария)</strong></div>
+            <div class="brand-item">Низковольтные компоненты: <strong>Schneider (Франция)</strong></div>
+            <div class="brand-item">Контроль температуры: <strong>Omron (Япония)</strong></div>
+            <div class="brand-item">Пневматика: <strong>Air Tac (Тайвань)</strong></div>
+            <div class="brand-item">Планетарные редукторы: <strong>Hubei Planets (Китай)</strong></div>
         </div>
     </section>
 
     <!-- Условия -->
     <section id="terms" class="terms">
-        <h2>Условия поставки и оплаты</h2>
+        <h2>Условия поставки, оплаты и монтажа</h2>
         <div class="terms-container">
             <div class="term-box">
                 <h4>Срок поставки</h4>
-                <p>150 рабочих дней после получения Продавцом депозита и утверждения обеими сторонами чертежей образца.</p>
+                <p>150 рабочих дней после получения Продавцом авансового платежа (30%) и утверждения обеими сторонами чертежей образца.</p>
             </div>
+            
             <div class="term-box">
-                <h4>Условия оплаты</h4>
-                <p>30% — депозит телеграфным переводом (Т/Т).</p>
-                <p>70% — Т/Т до отгрузки.</p>
+                <h4>Условия оплаты и этапы (L/C)</h4>
+                <p><strong>Шаг 1: 30% аванс (T/T)</strong> — для закупки расходников и запуска производства.</p>
+                <p><strong>Шаг 2: Открытие 70% L/C (Аккредитив)</strong> — после уведомления о готовности оборудования к тестированию, открывается безотзывный документарный аккредитив в банке г. Алматы.</p>
+                <p><em>Аккредитив подтверждается китайским банком (Confirmed L/C) и соответствует правилам UCP 600.</em></p>
             </div>
+
             <div class="term-box">
-                <h4>Гарантия</h4>
-                <p>12 месяцев с даты поставки. В течение этого периода Продавец обязуется ремонтировать машину и предоставлять запчасти (кроме быстроизнашивающихся деталей и повреждений по вине Покупателя).</p>
+                <h4>Приемка, отгрузка и раскрытие L/C</h4>
+                <p>Процедура проходит на территории Китая. <strong>Ответственность Продавца:</strong> обеспечить доступ для тестирования, выполнить загрузку в контейнеры, опломбировать вагоны/контейнеры и предоставить отчет.</p>
+                <p><strong>График снятия средств с аккредитива:</strong></p>
+                <ul>
+                    <li><strong>50% от суммы L/C</strong> — против коносамента (Bill of Lading), упаковочного листа и Акта приемки (FAT) на заводе.</li>
+                    <li><strong>20% от суммы L/C</strong> — против подписанного Сторонами Акта о завершении пусконаладочных работ (SAT) в г. Алматы.</li>
+                </ul>
             </div>
+
             <div class="term-box">
                 <h4>Монтаж и наладка</h4>
-                <p>Продавец отвечает за первую установку и регулировку (срок: 30 дней).</p>
-                <p>При задержке по вине Покупателя или сверхурочной работе — $200/день за специалиста.</p>
+                <p>Первая установка и регулировка (срок: 30 дней) за счет Продавца.</p>
+                <p>При командировке за рубеж Покупатель оплачивает транспорт, проживание и переводчика.</p>
+                <p>Сверхурочная работа или простой по вине Покупателя — $200/день за специалиста.</p>
+            </div>
+
+            <div class="term-box" style="grid-column: 1 / -1;">
+                <h4>Требования к помещению для установки</h4>
+                <ul>
+                    <li>Отсутствие вибрации, чистая среда, хорошая вентиляция, отсутствие взрывоопасных и коррозионных веществ.</li>
+                    <li>Ровный бетонный пол (марка не ниже 300), перепад высот 15-25 мм.</li>
+                    <li>Толщина бетонного пола не менее 200 мм. Несущая способность (если 2-й этаж) — не менее 3,5 т/м².</li>
+                    <li>Расстояние от задней части машины до стены — не менее 1 метра.</li>
+                    <li>Температура внутри цеха — не ниже 12-15 °C.</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -608,26 +714,22 @@
         <p><strong>Shengquan Machinery Co., Ltd</strong></p>
         <p style="color: #ffca28; font-size: 1.1rem; margin: 15px 0;">
             Официальный эксклюзивный представитель по РФ и СНГ: 
-            <a href="https://royalmachinery.ru" target="_blank" style="color: #ffca28; text-decoration: underline;">Royal Machinery</a>
+            <a href="https://royalmachinery.ru" target="_blank" style="color: #ffca28; text-decoration: underline;">Royal Rich Machinery LTD</a>
         </p>
         <p>Наша компания также может поставлять различные виды сырья для детских подгузников, подгузников для взрослых и гигиенических прокладок.</p>
         <p style="margin-top: 20px; font-size: 0.9rem; color: #888;">&copy; <span id="year"></span> Все права защищены. Коммерческое предложение.</p>
     </footer>
 
     <script>
-        // Плавная прокрутка для якорных ссылок
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
-                // Закрыть мобильное меню после клика
                 document.querySelector('nav ul').classList.remove('active');
             });
         });
-
-        // Автоматическая подстановка текущего года в копирайт
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
