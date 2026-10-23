@@ -134,6 +134,11 @@
             margin-top: 10px;
             display: block;
         }
+        .cert-info {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 5px;
+        }
 
         /* Sections General */
         section {
@@ -438,7 +443,6 @@
 </head>
 <body>
 
-    <!-- Шапка сайта -->
     <header>
         <div class="logo">Shengquan Machinery</div>
         <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
@@ -453,30 +457,31 @@
         </nav>
     </header>
 
-    <!-- Главный экран -->
     <section class="hero">
         <h1>Полностью сервоприводная линия по производству подгузников для взрослых</h1>
         <p>Модель SQM-CK-300SV. Высокая скорость, надежность и полный контроль качества. Ознакомьтесь с коммерческим предложением.</p>
         <a href="#main-machine" class="btn">Смотреть конфигурацию</a>
     </section>
 
-    <!-- Баннер эксклюзивного представителя -->
+    <!-- Баннер эксклюзивного представителя с сертификатом -->
     <div class="representative-banner">
         <p style="margin: 0;">
             <strong>Официальный эксклюзивный представитель в РФ и странах СНГ:</strong><br>
             <a href="https://royalmachinery.ru" target="_blank">Royal Rich Machinery LTD (royalmachinery.ru)</a>
+        </p>
+        <p class="cert-info">
+            <strong>Сертификат официального представителя:</strong> № [Вставьте номер, если есть] от 22.10.2026 г.
         </p>
         <span class="phone-number">
             Тел: <a href="tel:+79191479545" style="font-size: 1.4rem; color: #d32f2f;">+7 (919) 147-95-45</a>
         </span>
     </div>
 
-    <!-- Основное оборудование -->
     <section id="main-machine" class="main-machine">
         <h2>Основное оборудование</h2>
         <div class="summary-card">
             <div class="summary-image">
-                <img src="main-machine.png" alt="Полностью сервоприводная машина SQM-CK-300SV">
+                <img src="./main-machine.png" alt="Полностью сервоприводная машина SQM-CK-300SV">
             </div>
             <div class="summary-details">
                 <h3>Полностью сервоприводная машина</h3>
@@ -491,15 +496,13 @@
         </div>
     </section>
 
-    <!-- Дополнительное оборудование -->
     <section id="options">
         <h2>Опциональная комплектация</h2>
         <div class="equipment-grid">
             
-            <!-- Аппликаторы -->
             <div class="card">
                 <div class="card-image">
-                    <img src="glue.png" alt="Аппликаторы термоплавкого клея">
+                    <img src="./glue.png" alt="Аппликаторы термоплавкого клея">
                 </div>
                 <div class="card-content">
                     <h3>Аппликаторы термоплавкого клея (7 шт.)</h3>
@@ -508,10 +511,9 @@
                 </div>
             </div>
 
-            <!-- Укладчик -->
             <div class="card">
                 <div class="card-image">
-                    <img src="stacker.png" alt="Укладчик">
+                    <img src="./stacker.png" alt="Укладчик">
                 </div>
                 <div class="card-content">
                     <h3>Укладчик + 2 машины для запайки</h3>
@@ -520,10 +522,9 @@
                 </div>
             </div>
 
-            <!-- Пылеуловитель -->
             <div class="card">
                 <div class="card-image">
-                    <img src="dust-remover.png" alt="Барабанный пылеуловитель">
+                    <img src="./dust-remover.png" alt="Барабанный пылеуловитель">
                 </div>
                 <div class="card-content">
                     <h3>Барабанный пылеуловитель</h3>
@@ -532,10 +533,9 @@
                 </div>
             </div>
 
-            <!-- Компрессор -->
             <div class="card">
                 <div class="card-image">
-                    <img src="compressor.png" alt="Воздушный компрессорный агрегат">
+                    <img src="./compressor.png" alt="Воздушный компрессорный агрегат">
                 </div>
                 <div class="card-content">
                     <h3>Воздушный компрессорный агрегат</h3>
@@ -544,10 +544,9 @@
                 </div>
             </div>
 
-            <!-- Визуальный контроль -->
             <div class="card">
                 <div class="card-image">
-                    <img src="visual-detector.png" alt="Система визуального контроля">
+                    <img src="./visual-detector.png" alt="Система визуального контроля">
                 </div>
                 <div class="card-content">
                     <h3>Система визуального контроля</h3>
@@ -556,10 +555,9 @@
                 </div>
             </div>
 
-            <!-- Принтер -->
             <div class="card">
                 <div class="card-image">
-                    <img src="printer.png" alt="Струйный принтер">
+                    <img src="./printer.png" alt="Струйный принтер">
                 </div>
                 <div class="card-content">
                     <h3>Струйный принтер (дата производства)</h3>
@@ -568,10 +566,9 @@
                 </div>
             </div>
 
-            <!-- Металлодетектор -->
             <div class="card">
                 <div class="card-image">
-                    <img src="metal-detector.png" alt="Металлодетектор">
+                    <img src="./metal-detector.png" alt="Металлодетектор">
                 </div>
                 <div class="card-content">
                     <h3>Металлодетектор</h3>
@@ -583,7 +580,6 @@
         </div>
     </section>
 
-    <!-- Технические характеристики -->
     <section id="specs">
         <h2>Основные параметры</h2>
         <table class="specs-table">
@@ -639,14 +635,12 @@
             </tbody>
         </table>
 
-        <!-- Фото качества сборки пневматики -->
         <div class="engineering-gallery">
-            <img src="pipes-1.png" alt="Магистральные воздушные трубы">
-            <img src="pipes-2.png" alt="Разводка пневматики внутри машины">
+            <img src="./pipes-1.png" alt="Магистральные воздушные трубы">
+            <img src="./pipes-2.png" alt="Разводка пневматики внутри машины">
         </div>
     </section>
 
-    <!-- Бренды комплектующих -->
     <section id="brands" style="background-color: var(--light-bg);">
         <h2>Бренды основных комплектующих</h2>
         <div class="brands-grid">
@@ -663,7 +657,6 @@
         </div>
     </section>
 
-    <!-- Условия -->
     <section id="terms" class="terms">
         <h2>Условия поставки, оплаты и монтажа</h2>
         <div class="terms-container">
@@ -709,12 +702,14 @@
         </div>
     </section>
 
-    <!-- Подвал -->
     <footer>
         <p><strong>Shengquan Machinery Co., Ltd</strong></p>
         <p style="color: #ffca28; font-size: 1.1rem; margin: 15px 0;">
             Официальный эксклюзивный представитель по РФ и СНГ: 
             <a href="https://royalmachinery.ru" target="_blank" style="color: #ffca28; text-decoration: underline;">Royal Rich Machinery LTD</a>
+        </p>
+        <p style="color: #aaa; font-size: 0.95rem; margin-bottom: 15px;">
+            Сертификат официального представителя: № [Вставьте номер] от 22.10.2026 г.
         </p>
         <p>Наша компания также может поставлять различные виды сырья для детских подгузников, подгузников для взрослых и гигиенических прокладок.</p>
         <p style="margin-top: 20px; font-size: 0.9rem; color: #888;">&copy; <span id="year"></span> Все права защищены. Коммерческое предложение.</p>
